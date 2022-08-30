@@ -1,0 +1,35 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: grey;
+    border: 5px solid;
+    margin-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.display {
+    display: flex;
+    justify-content: right;
+    padding: 30px;
+    background-color: rgb(231, 220, 220);
+    margin: 10px
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#button {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin: 10px
+}
+
