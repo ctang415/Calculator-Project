@@ -1,16 +1,16 @@
-const add = function(a, b) {
+function add(a, b) {
     return a + b;
 };
 
-const subtract = function(a, b) {
+function subtract(a, b) {
     return a - b;
 };
 
-const multiply = function(a, b){
+function multiply(a, b){
     return a * b;
 };
 
-const divide = function(a, b) {
+function divide(a, b) {
     if (a === 0 || b === 0) {
         return 'ERROR';
     }
@@ -19,6 +19,23 @@ const divide = function(a, b) {
     }
 };
 
-const clear = function() {
-    
+function clear() {
+
 }
+
+function operate(operator, a, b) {
+    switch(operator) {
+        case "+":
+            return add(a, b);
+            break;
+        case  "-":
+            return subtract(a, b);
+            break;
+        case "*":
+            return multiply(a, b);
+            break;
+        case "/":
+            return divide(a, b);
+            break;
+    }
+};
