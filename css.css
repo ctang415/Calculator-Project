@@ -7,7 +7,6 @@
 .calculator {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     background-color: lightgrey;
     border: 5px solid;
@@ -15,27 +14,30 @@
 }
 
 .display {
-    display: flex;
-    font-size: 40px;
+    font-size: 50px;
     color:black;
     border: 5px rgb(241, 241, 241) solid;
-    justify-content: right;
+    text-align: right;
     background-color: white;
-    margin: 10px
+    margin: 10px;
+    padding: 30px;
+    height: 30px;
 }
 
 .buttons {
     display: flex;
+    padding: 5px;
     justify-content: space-around;
     gap: 10px;
 }
 
-#button, #buttonOperate {
+#button, #buttonOperate, #buttonClear, #buttonEqual {
     display: flex;
     font-size: 20px;
+    border-radius: 15px;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     margin: 10px
 }
 

@@ -1,15 +1,31 @@
 const displayContent = document.querySelector('.display');
 
-displayContent.textContent = 0;
 
-
+let numberOne = '';
+let numberTwo = '';
+let operator = '';
 
 
 const button = document.querySelectorAll('#button');
-for (let i = 0; i < button.length; i++)
+for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', function() {
-    displayContent.textContent = this.textContent;
-    });
+        displayContent.textContent += this.textContent;
+        numberOne = displayContent.textContent;
+        });
+    };
+
+function clearAll () {
+    displayContent.textContent = '';
+    numberOne = '';
+    numberTwo = '';
+    operator = '';
+}    
+
+const buttonClear = document.querySelector('#buttonClear')
+buttonClear.addEventListener('click', function() {
+    clearAll();
+});
+
 
 function add(a, b) {
     return a + b;
