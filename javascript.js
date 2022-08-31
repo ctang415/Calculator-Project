@@ -1,3 +1,16 @@
+const displayContent = document.querySelector('.display');
+
+displayContent.textContent = 0;
+
+
+
+
+const button = document.querySelectorAll('#button');
+for (let i = 0; i < button.length; i++)
+    button[i].addEventListener('click', function() {
+    displayContent.textContent = this.textContent;
+    });
+
 function add(a, b) {
     return a + b;
 };
