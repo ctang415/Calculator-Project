@@ -5,9 +5,6 @@
 }
 
 .calculator {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: lightgrey;
     border: 5px solid;
     padding-bottom: 10px;
@@ -31,7 +28,10 @@
     gap: 10px;
 }
 
-#button, #buttonOperate, #buttonClear, #buttonEqual {
+.button, 
+#buttonOperate, 
+#buttonClear, 
+#buttonEqual {
     display: flex;
     font-size: 20px;
     border-radius: 15px;
@@ -41,3 +41,11 @@
     margin: 10px
 }
 
+#buttonOperate, 
+#buttonEqual {
+    background-color: rgb(238, 130, 58);
+}
+
+#buttonClear {
+    background-color:rgb(223, 180, 151)
+}

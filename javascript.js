@@ -1,19 +1,19 @@
 const displayContent = document.querySelector('.displayText');
 const displayOp = document.querySelector('.displayOp')
 
+
 let numberOne = '';
 let numberTwo = '';
 let operator = '';
 let total = '';
 
-
-const button = document.querySelectorAll('#button');
+const button = document.querySelectorAll('.button');
 for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', function() {
         if (operator === '') {
-        displayContent.textContent += this.textContent;
-        numberOne += this.textContent;
-        console.log(numberOne)
+            displayContent.textContent += this.textContent;
+            numberOne += this.textContent;
+            console.log(numberOne)
         }
         else {
             displayContent.textContent += this.textContent;
@@ -25,6 +25,7 @@ for (let i = 0; i < button.length; i++) {
 };
 
 
+
 const buttonOperate = document.querySelectorAll('#buttonOperate');
     for (let i = 0; i < buttonOperate.length; i++) {
         buttonOperate[i].addEventListener('click', function() {
@@ -32,7 +33,7 @@ const buttonOperate = document.querySelectorAll('#buttonOperate');
                 operator = false;
             }
             else if (numberTwo !== '') {
-                total = operate(operator, parseInt(numberOne), parseInt(numberTwo))
+                total = operate(operator, numberOne, numberTwo)
                 numberOne = total;
                 console.log(numberOne);
                 displayContent.textContent = '';
@@ -50,8 +51,9 @@ const buttonOperate = document.querySelectorAll('#buttonOperate');
 };
 
 const buttonEqual = document.querySelector('#buttonEqual');
+
 buttonEqual.addEventListener('click', function() {
-    total = operate(operator, parseInt(numberOne), parseInt(numberTwo));
+    total = operate(operator, numberOne, numberTwo);
     displayContent.textContent = total;
     console.log(total)
 })
@@ -73,7 +75,7 @@ buttonClear.addEventListener('click', function() {
 
 
 function add(a, b) {
-    return a + b;
+    return parseInt(a) + parseInt(b);
 };
 
 function subtract(a, b) {
