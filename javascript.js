@@ -4,6 +4,7 @@ const displayOp = document.querySelector('.displayOp')
 let numberOne = '';
 let numberTwo = '';
 let operator = '';
+let total = '';
 
 
 const button = document.querySelectorAll('#button');
@@ -30,6 +31,15 @@ const buttonOperate = document.querySelectorAll('#buttonOperate');
             if (numberOne === '') {
                 operator = false;
             }
+            else if (numberTwo !== '') {
+                total = operate(operator, parseInt(numberOne), parseInt(numberTwo))
+                numberOne = total;
+                console.log(numberOne);
+                displayContent.textContent = '';
+                displayOp.textContent = this.textContent;
+                operator = this.textContent;
+                console.log(operator);
+            }
             else {
                 displayContent.textContent = '';
                 displayOp.textContent = this.textContent;
@@ -41,7 +51,9 @@ const buttonOperate = document.querySelectorAll('#buttonOperate');
 
 const buttonEqual = document.querySelector('#buttonEqual');
 buttonEqual.addEventListener('click', function() {
-    displayContent.textContent = operate(operator, parseInt(numberOne), parseInt(numberTwo));
+    total = operate(operator, parseInt(numberOne), parseInt(numberTwo));
+    displayContent.textContent = total;
+    console.log(total)
 })
 
 
@@ -49,7 +61,9 @@ function clearAll () {
     displayContent.textContent = '';
     numberOne = '';
     numberTwo = '';
+    displayOp.textContent = '';
     operator = '';
+    total = '';
 }    
 
 const buttonClear = document.querySelector('#buttonClear')
