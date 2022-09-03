@@ -29,7 +29,7 @@ for (let i = 0; i < button.length; i++) {
 const buttonOperate = document.querySelectorAll('#buttonOperate');
     for (let i = 0; i < buttonOperate.length; i++) {
         buttonOperate[i].addEventListener('click', function() {
-            if (numberOne === '' && buttonOperate[i].textContent !== '-') {
+            if (numberOne === '') {
                 operator = false;
             }
             else if (numberTwo !== '') {
@@ -47,21 +47,20 @@ const buttonOperate = document.querySelectorAll('#buttonOperate');
                 operator = this.textContent;
                 console.log(operator)
             }
-        });
+        })
 };
 
 const buttonEqual = document.querySelector('#buttonEqual');
 
 buttonEqual.addEventListener('click', function() {
-    if (operator === '') {
-        return displayContent.textContent;
+    if (numberTwo === '' && operator !== ''){
+        displayContent.textContent
     }
-    else if (operator !== '' && numberTwo ==- '')
-    return displayContent.textContent;
     else {
-    total = operate(operator, numberOne, numberTwo);
-    displayContent.textContent = total;
-    console.log(total)
+        displayOp.textContent = '';
+        total = operate(operator, numberOne, numberTwo);
+        displayContent.textContent = total;
+        console.log(total)
     }
 })
 
@@ -81,12 +80,13 @@ buttonClear.addEventListener('click', function() {
 });
 
 
+
 function add(a, b) {
     return parseInt(a) + parseInt(b);
 };
 
 function subtract(a, b) {
-    return a - b;
+    return parseInt(a) - parseInt(b);
 };
 
 function multiply(a, b){
